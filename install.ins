@@ -1,0 +1,22 @@
+[Initial]
+Message=Installiere KeePass...
+DefVar $ExitCode$
+
+[Aktionen]
+ShowBitmap "%ScriptPath%\logo.png" "KeePass"
+WinBatch_Setup
+Sub_HandleExitCode
+
+[WinBatch_Setup]
+powershell.exe Expand-Archive -Path "%ScriptPath%\data\keepass.zip" -DestinationPath "C:\ProgramData"
+cd "%userprofile%\Desktop"
+mklink KeePass "C:\ProgramData\keepass\KeePass.exe"
+
+[Sub_HandleExitCode]
+; check return code
+Set $ExitCode$ = GetLastExitCode
+comment "GetLastExitCode: " + $ExitCode$
+if not($ExitCode$ = "0")
+  LogError "Fatal: setup returned exit code " + $ExitCode$
+  IsFatalError
+endif

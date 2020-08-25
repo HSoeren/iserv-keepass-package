@@ -1,0 +1,11 @@
+[Product]
+type: localboot
+id: soeren-keepass
+name: KeePass
+description: Passwort-Manager
+advice:
+version: 2.45
+packageVersion: 1.0
+setupScript: install.ins
+uninstallScript: remove.ins
+homepage: https://keepass.info/

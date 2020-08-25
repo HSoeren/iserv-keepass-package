@@ -9,6 +9,7 @@ Sub_HandleExitCode
 
 [WinBatch_Setup]
 powershell.exe Expand-Archive -Path "%ScriptPath%\data\keepass.zip" -DestinationPath "C:\ProgramData"
+move "%ScriptPath%\data\german.lngx" "C:\ProgramData\Languages\"
 cd "%userprofile%\Desktop"
 mklink KeePass "C:\ProgramData\keepass\KeePass.exe"
 

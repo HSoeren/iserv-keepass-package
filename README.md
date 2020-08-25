@@ -14,6 +14,10 @@ used path for programm files `C:\ProgramData\keepass`
 
 so if the script does not do its job, just delete the folder `keepass` under `C:\ProgramData\` - admin rights are required for this step.
 
+## Translation
+
+During the installation a German language package is automatically moved to the corresponding folder.
+
 ## Problems
 
 please just create an issue, I will see what I can do.
